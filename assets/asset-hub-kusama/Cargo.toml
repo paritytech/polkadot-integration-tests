@@ -1,9 +1,9 @@
 [package]
-name = "statemine-it"
+name = "asset-hub-kusama-integration-tests"
 version = "1.0.0"
 authors = ["Parity Technologies <admin@parity.io>"]
 edition = "2021"
-description = "Statemine parachain runtime integration tests with xcm-emulator"
+description = "Asset Hub Kusama runtime integration tests with xcm-emulator"
 
 [dependencies]
 codec = { package = "parity-scale-codec", version = "3.4.0", default-features = false }
@@ -29,7 +29,7 @@ pallet-xcm = { default-features = false, git = "https://github.com/paritytech/po
 # Cumulus
 parachains-common = { path = "../../../../common" }
 penpal-runtime = { path = "../../../../runtimes/testing/penpal" }
-statemine-runtime = { path = "../../../../runtimes/assets/statemine" }
+asset-hub-kusama-runtime = { path = "../../../../runtimes/assets/asset-hub-kusama" }
 
 # Local
 xcm-emulator = { default-features = false, path = "../../../../../xcm/xcm-emulator" }

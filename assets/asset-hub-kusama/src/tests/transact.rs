@@ -6,22 +6,22 @@ fn transact_sudo_from_relay_to_assets_para() {
 	// Call to be executed in Assets Parachain
 	const ASSET_ID: u32 = 1;
 
-	let call = <Statemint as Para>::RuntimeCall::Assets(pallet_assets::Call::<
-		<Statemint as Para>::Runtime,
+	let call = <AssetHubKusama as Para>::RuntimeCall::Assets(pallet_assets::Call::<
+		<AssetHubKusama as Para>::Runtime,
 		Instance1,
 	>::force_create {
 		id: ASSET_ID.into(),
 		is_sufficient: true,
 		min_balance: 1000,
-		owner: StatemintSender::get().into(),
+		owner: AssetHubKusamaSender::get().into(),
 	})
 	.encode()
 	.into();
 
 	// XcmPallet send arguments
-	let sudo_origin = <Polkadot as Relay>::RuntimeOrigin::root();
+	let sudo_origin = <Kusama as Relay>::RuntimeOrigin::root();
 	let assets_para_destination: VersionedMultiLocation =
-		Polkadot::child_location_of(Statemint::para_id()).into();
+		Kusama::child_location_of(AssetHubKusama::para_id()).into();
 
 	let weight_limit = WeightLimit::Unlimited;
 	let require_weight_at_most = Weight::from_parts(1000000000, 200000);
@@ -34,17 +34,17 @@ fn transact_sudo_from_relay_to_assets_para() {
 	]));
 
 	// Send XCM message from Relay Chain
-	Polkadot::execute_with(|| {
-		assert_ok!(<Polkadot as PolkadotPallet>::XcmPallet::send(
+	Kusama::execute_with(|| {
+		assert_ok!(<Kusama as KusamaPallet>::XcmPallet::send(
 			sudo_origin,
 			bx!(assets_para_destination),
 			bx!(xcm),
 		));
 
-		type RuntimeEvent = <Polkadot as Relay>::RuntimeEvent;
+		type RuntimeEvent = <Kusama as Relay>::RuntimeEvent;
 
 		assert_expected_events!(
-			Polkadot,
+			Kusama,
 			vec![
 				RuntimeEvent::XcmPallet(pallet_xcm::Event::Sent { .. }) => {},
 			]
@@ -52,7 +52,7 @@ fn transact_sudo_from_relay_to_assets_para() {
 	});
 
 	// Receive XCM message in Assets Parachain
-	Statemint::execute_with(|| {
-		assert!(<Statemint as StatemintPallet>::Assets::asset_exists(ASSET_ID));
+	AssetHubKusama::execute_with(|| {
+		assert!(<AssetHubKusama as AssetHubKusamaPallet>::Assets::asset_exists(ASSET_ID));
 	});
 }
