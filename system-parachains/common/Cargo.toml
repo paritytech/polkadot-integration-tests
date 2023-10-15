@@ -47,11 +47,9 @@ cumulus-primitives-core = { path = "../../../../primitives/core" }
 penpal-runtime = { path = "../../../runtimes/testing/penpal" }
 asset-hub-polkadot-runtime = { path = "../../../runtimes/assets/asset-hub-polkadot" }
 asset-hub-kusama-runtime = { path = "../../../runtimes/assets/asset-hub-kusama" }
-asset-hub-westend-runtime = { path = "../../../runtimes/assets/asset-hub-westend" }
 collectives-polkadot-runtime = { path = "../../../runtimes/collectives/collectives-polkadot" }
 bridge-hub-kusama-runtime = { path = "../../../runtimes/bridge-hubs/bridge-hub-kusama" }
 bridge-hub-polkadot-runtime = { path = "../../../runtimes/bridge-hubs/bridge-hub-polkadot" }
-bridge-hub-rococo-runtime = { path = "../../../runtimes/bridge-hubs/bridge-hub-rococo" }
 xcm-emulator = { path = "../../../../xcm/xcm-emulator", default-features = false}
 cumulus-pallet-dmp-queue = { path = "../../../../pallets/dmp-queue" }
 cumulus-pallet-xcmp-queue = { path = "../../../../pallets/xcmp-queue", default-features = false}
