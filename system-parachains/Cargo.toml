@@ -17,6 +17,7 @@ members = [
 [diener_exclude]
 codec = {}
 assert_matches = {}
+paste = {}
 xcm-emulator = {}
 asset-hub-kusama-runtime = {}
 integration-tests-common = {}
