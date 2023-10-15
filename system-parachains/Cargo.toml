@@ -8,10 +8,10 @@ license = "GPL-3.0-only"
 resolver = "2"
 
 members = [
-	"system-parachains/assets/asset-hub-kusama",
-	"system-parachains/assets/asset-hub-polkadot",
-	"system-parachains/collectives/collectives-polkadot",
-	"system-parachains/common",
+	"assets/asset-hub-kusama",
+	"assets/asset-hub-polkadot",
+	"collectives/collectives-polkadot",
+	"common",
 ]
 
 [diener_exclude]
@@ -25,6 +25,7 @@ asset-hub-polkadot-runtime = {}
 collectives-polkadot-runtime = {}
 bridge-hub-polkadot-runtime = {}
 bridge-hub-kusama-runtime = {}
-# Others
+# Local crates
 integration-tests-common = {}
+# Others
 xcm-emulator = {}
