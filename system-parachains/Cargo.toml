@@ -15,12 +15,16 @@ members = [
 ]
 
 [diener_exclude]
+# External crates
 codec = { package = "parity-scale-codec" }
 assert_matches = {}
 paste = {}
-xcm-emulator = {}
+# Runtime crates
 asset-hub-kusama-runtime = {}
-integration-tests-common = {}
+asset-hub-polkadot-runtime = {}
 collectives-polkadot-runtime = {}
 bridge-hub-polkadot-runtime = {}
 bridge-hub-kusama-runtime = {}
+# Others
+integration-tests-common = {}
+xcm-emulator = {}
