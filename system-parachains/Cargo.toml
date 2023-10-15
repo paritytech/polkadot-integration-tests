@@ -15,7 +15,7 @@ members = [
 ]
 
 [diener_exclude]
-codec = {}
+codec = { package = "parity-scale-codec" }
 assert_matches = {}
 paste = {}
 xcm-emulator = {}
