@@ -25,7 +25,7 @@ asset-hub-polkadot-runtime = {}
 collectives-polkadot-runtime = {}
 bridge-hub-polkadot-runtime = {}
 bridge-hub-kusama-runtime = {}
+# Polkadot-SDK crates
+xcm-emulator = {}
 # Local crates
 integration-tests-common = {}
-# Others
-xcm-emulator = {}

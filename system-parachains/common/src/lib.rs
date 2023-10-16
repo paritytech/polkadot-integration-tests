@@ -254,8 +254,8 @@ decl_test_networks! {
 	},
 }
 
-decl_test_bridges! {
-	// TODO: uncomment when https://github.com/paritytech/cumulus/pull/2528 is merged
+// TODO: uncomment when https://github.com/paritytech/cumulus/pull/2528 is merged
+// decl_test_bridges! {
 	// pub struct PolkadotKusamaMockBridge {
 	// 	source = BridgeHubPolkadot,
 	// 	target = BridgeHubKusama,
@@ -266,7 +266,7 @@ decl_test_bridges! {
 	// 	target = BridgeHubPolkadot,
 	// 	handler = KusamaPolkadotMessageHandler
 	// }
-}
+// }
 
 // Polkadot implementation
 impl_accounts_helpers_for_relay_chain!(Polkadot);
@@ -316,5 +316,5 @@ decl_test_sender_receiver_accounts_parameter_types! {
 	PenpalPolkadotA { sender: ALICE, receiver: BOB },
 	PenpalPolkadotB { sender: ALICE, receiver: BOB },
 	PenpalKusamaA { sender: ALICE, receiver: BOB },
-	PenpalKusamaB { sender: ALICE, receiver: BOB },
+	PenpalKusamaB { sender: ALICE, receiver: BOB }
 }

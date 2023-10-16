@@ -19,7 +19,6 @@ pub use paste;
 pub use crate::{
 	constants::{PROOF_SIZE_THRESHOLD, REF_TIME_THRESHOLD},
 	xcm_helpers::xcm_transact_unpaid_execution,
-	BridgeHubRococo, BridgeHubWococo,
 };
 
 // Substrate
