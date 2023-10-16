@@ -406,7 +406,6 @@ dependencies = [
  "parity-scale-codec",
  "polkadot-core-primitives 2.0.0",
  "polkadot-parachain-primitives 1.0.0",
- "polkadot-runtime",
  "polkadot-runtime-parachains 2.0.0",
  "sp-runtime 26.0.0",
  "staging-xcm 2.0.0",
@@ -502,7 +501,6 @@ dependencies = [
  "parity-scale-codec",
  "polkadot-core-primitives 2.0.0",
  "polkadot-parachain-primitives 1.0.0",
- "polkadot-runtime",
  "polkadot-runtime-parachains 2.0.0",
  "sp-runtime 26.0.0",
  "staging-xcm 2.0.0",
@@ -1567,7 +1565,6 @@ dependencies = [
  "parity-scale-codec",
  "polkadot-core-primitives 2.0.0",
  "polkadot-parachain-primitives 1.0.0",
- "polkadot-runtime",
  "polkadot-runtime-parachains 2.0.0",
  "sp-core 23.0.0",
  "sp-runtime 26.0.0",
@@ -4804,7 +4801,7 @@ dependencies = [
  "cumulus-pallet-xcmp-queue 0.2.0",
  "cumulus-primitives-core 0.2.0",
  "frame-support 23.0.0",
- "kusama-runtime-constants 2.0.0",
+ "kusama-runtime-constants 1.0.0",
  "pallet-assets 24.0.0",
  "pallet-bridge-messages",
  "pallet-im-online",
@@ -4819,7 +4816,7 @@ dependencies = [
  "polkadot-parachain-primitives 1.0.0",
  "polkadot-primitives 2.0.0",
  "polkadot-runtime",
- "polkadot-runtime-constants 2.0.0",
+ "polkadot-runtime-constants 1.0.0",
  "polkadot-runtime-parachains 2.0.0",
  "polkadot-service",
  "sc-consensus-grandpa",
@@ -9772,9 +9769,8 @@ dependencies = [
 
 [[package]]
 name = "polkadot-runtime"
-version = "2.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f0de525dafaeeedc896f3c46793bb79251376b19914674dbb42df391ad055c4b"
+version = "1.0.0"
+source = "git+https://github.com/polkadot-fellows/runtimes?branch=main#ee6196c52a953beb1f5c63a4482e9fbe46a73c6f"
 dependencies = [
  "bitvec",
  "frame-benchmarking 23.0.0",
@@ -9834,7 +9830,7 @@ dependencies = [
  "parity-scale-codec",
  "polkadot-primitives 2.0.0",
  "polkadot-runtime-common 2.0.0",
- "polkadot-runtime-constants 2.0.0",
+ "polkadot-runtime-constants 1.0.0",
  "polkadot-runtime-parachains 2.0.0",
  "rustc-hex",
  "scale-info",
@@ -10886,13 +10882,13 @@ dependencies = [
 
 [[package]]
 name = "regex"
-version = "1.10.1"
+version = "1.10.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "aaac441002f822bc9705a681810a4dd2963094b9ca0ddc41cb963a4c189189ea"
+checksum = "380b951a9c5e80ddfd6136919eef32310721aa4aacd4889a8d39124b026ab343"
 dependencies = [
  "aho-corasick",
  "memchr",
- "regex-automata 0.4.2",
+ "regex-automata 0.4.3",
  "regex-syntax 0.8.2",
 ]
 
@@ -10907,9 +10903,9 @@ dependencies = [
 
 [[package]]
 name = "regex-automata"
-version = "0.4.2"
+version = "0.4.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5011c7e263a695dc8ca064cddb722af1be54e517a280b12a5356f98366899e5d"
+checksum = "5f804c7828047e88b2d32e2d7fe5a105da8ee3264f01902f796c8e067dc2483f"
 dependencies = [
  "aho-corasick",
  "memchr",
@@ -15681,9 +15677,8 @@ checksum = "a8f112729512f8e442d81f95a8a7ddf2b7c6b8a1a6f509a95864142b30cab2d3"
 
 [[package]]
 name = "staging-kusama-runtime"
-version = "2.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "084d70144427399ec325a8ef44ecb322b5738f22cd011a18c5d95237037cbf28"
+version = "1.0.0"
+source = "git+https://github.com/polkadot-fellows/runtimes?branch=main#ee6196c52a953beb1f5c63a4482e9fbe46a73c6f"
 dependencies = [
  "binary-merkle-tree",
  "bitvec",
@@ -15696,7 +15691,7 @@ dependencies = [
  "frame-system-rpc-runtime-api 21.0.0",
  "frame-try-runtime 0.29.0",
  "hex-literal",
- "kusama-runtime-constants 2.0.0",
+ "kusama-runtime-constants 1.0.0",
  "log",
  "pallet-authority-discovery 23.0.0",
  "pallet-authorship 23.0.0",

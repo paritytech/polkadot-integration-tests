@@ -23,7 +23,6 @@ pallet-salary = { default-features = false, version = "8.0.0" }
 polkadot-core-primitives = { default-features = false, version = "2.0.0" }
 polkadot-parachain-primitives = { default-features = false, version = "1.0.0" }
 polkadot-runtime-parachains = { version = "2.0.0" }
-polkadot-runtime = { version = "2.0.0" }
 xcm = { package = "staging-xcm", default-features = false, version = "2.0.0" }
 pallet-xcm = { default-features = false, version = "2.0.0" }
 
