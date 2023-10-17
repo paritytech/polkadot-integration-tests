@@ -282,7 +282,7 @@ pub mod kusama {
 	use super::*;
 	pub const ED: Balance = kusama_runtime_constants::currency::EXISTENTIAL_DEPOSIT;
 	use kusama_runtime_constants::currency::UNITS as KSM;
-	const ENDOWMENT: u128 = 1_000_000 * KSM;
+	const ENDOWMENT: u128 = 1_000_000_000 * KSM;
 	const STASH: u128 = 100 * KSM;
 
 	pub fn get_host_config() -> HostConfiguration<BlockNumber> {
