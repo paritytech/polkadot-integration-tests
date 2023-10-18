@@ -7461,8 +7461,9 @@ dependencies = [
 
 [[package]]
 name = "penpal-runtime"
-version = "0.9.27"
-source = "git+https://github.com/paritytech/polkadot-sdk?branch=release-crates-io-v1.1.0#eb65df7f9948b71356dcb07c3e7d2a8edd2bc126"
+version = "0.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cf061c8ec091b23b1a9f3a744887578954fbd0223c017447e915504ad828cc35"
 dependencies = [
  "cumulus-pallet-aura-ext",
  "cumulus-pallet-dmp-queue",
@@ -14298,8 +14299,9 @@ dependencies = [
 
 [[package]]
 name = "xcm-emulator"
-version = "0.0.0"
-source = "git+https://github.com/paritytech/polkadot-sdk?branch=release-crates-io-v1.1.0#eb65df7f9948b71356dcb07c3e7d2a8edd2bc126"
+version = "0.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "53b86b173461108ce29113b1e682178c290f985eb0632d8cde1e43911e7e3f5a"
 dependencies = [
  "cumulus-pallet-parachain-system",
  "cumulus-primitives-core",

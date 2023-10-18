@@ -40,13 +40,13 @@ pallet-xcm = { default-features = false, version = "2.0.0" }
 # Cumulus
 parachains-common = { version = "2.0.0" }
 cumulus-primitives-core = { version = "0.2.0" }
-penpal-runtime = { git = "https://github.com/paritytech/polkadot-sdk", branch = "release-crates-io-v1.1.0" }
+penpal-runtime = { version = "0.8.0" }
 asset-hub-polkadot-runtime = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
 asset-hub-kusama-runtime = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
 collectives-polkadot-runtime = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
 bridge-hub-kusama-runtime = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
 bridge-hub-polkadot-runtime = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
-xcm-emulator = { default-features = false, git = "https://github.com/paritytech/polkadot-sdk", branch = "release-crates-io-v1.1.0" }
+xcm-emulator = { default-features = false, version = "0.0.1" }
 cumulus-pallet-dmp-queue = { version = "0.2.0" }
 cumulus-pallet-xcmp-queue = { default-features = false, version = "0.2.0" }
 cumulus-pallet-parachain-system = { version = "0.2.0" }

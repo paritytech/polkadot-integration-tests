@@ -29,7 +29,7 @@ pallet-xcm = { default-features = false, version = "2.0.0" }
 # Cumulus
 parachains-common = { version = "2.0.0" }
 asset-hub-kusama-runtime = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
-xcm-emulator = { default-features = false, git = "https://github.com/paritytech/polkadot-sdk", branch = "release-crates-io-v1.1.0" }
+xcm-emulator = { default-features = false,  version = "0.0.1" }
 
 # Local
 integration-tests-common = { path = "../../common", default-features = false }
