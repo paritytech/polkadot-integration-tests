@@ -10,7 +10,8 @@ resolver = "2"
 members = [
     "chains/relays/kusama",
     "chains/system-parachains/asset-hubs/asset-hub-kusama",
-    # "networks/kusama-system"
+    "networks/kusama-system",
+    # "integration-tests/kusama-system/asset-hub",
 ]
 
 [diener_exclude]
@@ -30,7 +31,7 @@ xcm-emulator = {}
 integration-tests-common = {}
 
 # crates.io releases matching current runtime dependencies versions
-# This patching is needed until `xcm-emulator` and `penpal-runtime` have proper
+# This patching is needed until `itegration-tests-common` and `penpal-runtime` have releases
 [patch."https://github.com/paritytech/polkadot-sdk"]
 frame-support = { version = "23.0.0" }
 frame-system = { version = "23.0.0" }

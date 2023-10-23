@@ -1,86 +1,17 @@
 [package]
-name = "integration-tests-common"
-version = "1.0.0"
+name = "kusama-system-network"
+version = "0.0.0"
 authors.workspace = true
 edition.workspace = true
 license = "Apache-2.0"
-description = "Common resources for integration testing with xcm-emulator"
+description = "Asset Hub Kusama emulated chain"
 publish = false
 
 [dependencies]
-codec = { package = "parity-scale-codec", version = "3.4.0", default-features = false }
-paste = "1.0.14"
-
-# Substrate
-grandpa = { package = "sc-consensus-grandpa", version = "0.14.0" }
-sp-authority-discovery = { default-features = false, version = "21.0.0" }
-sp-runtime = { default-features = false, version = "26.0.0" }
-frame-support = { default-features = false, version = "23.0.0" }
-sp-core = { default-features = false, version = "23.0.0" }
-sp-consensus-babe = { default-features = false, version = "0.27.0" }
-pallet-assets = { default-features = false, version = "24.0.0" }
-pallet-staking = { default-features = false, version = "23.0.0" }
-pallet-message-queue = { default-features = false, version = "26.0.0" }
-pallet-im-online = { default-features = false, version = "22.0.0" }
-beefy-primitives = { package = "sp-consensus-beefy", version = "8.0.0" }
-
-# Polkadot
-polkadot-core-primitives = { default-features = false, version = "2.0.0" }
-polkadot-parachain-primitives = { default-features = false, version = "1.0.0" }
-polkadot-service = { default-features = false, features = ["full-node"], version = "2.0.0" }
-polkadot-primitives = { default-features = false, version = "2.0.0" }
-polkadot-runtime-parachains = { version = "2.0.0" }
-polkadot-runtime = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
-polkadot-runtime-constants = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
-# kusama-runtime = { package = "staging-kusama-runtime", git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
-kusama-runtime = { package = "staging-kusama-runtime", git = "https://github.com/paritytech/polkadot-sdk", branch = "nacho/xcm-emulator-generic-network-chain" }
-kusama-runtime-constants = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
-xcm = { package = "staging-xcm", default-features = false, version = "2.0.0" }
-pallet-xcm = { default-features = false, version = "2.0.0" }
-
 # Cumulus
-parachains-common = { version = "2.0.0" }
-cumulus-primitives-core = { version = "0.2.0" }
-penpal-runtime = { version = "0.8.0" }
-asset-hub-polkadot-runtime = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
-asset-hub-kusama-runtime = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
-collectives-polkadot-runtime = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
-bridge-hub-kusama-runtime = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
-bridge-hub-polkadot-runtime = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
-# xcm-emulator = { default-features = false, version = "0.0.1" }
 xcm-emulator = { default-features = false, git = "https://github.com/paritytech/polkadot-sdk", branch = "nacho/xcm-emulator-generic-network-chain" }
-cumulus-pallet-dmp-queue = { version = "0.2.0" }
-cumulus-pallet-xcmp-queue = { default-features = false, version = "0.2.0" }
-cumulus-pallet-parachain-system = { version = "0.2.0" }
-bp-messages = { version = "0.2.0" }
-pallet-bridge-messages = { version = "0.2.0" }
-bridge-runtime-common = { version = "0.2.0" }
+integration-tests-common = { git = "https://github.com/paritytech/polkadot-sdk", rev = "aa54bb11e732e5db6c1e69bd244147649ebd6824" }
 
-# [features]
-# runtime-benchmarks = [
-# 	"asset-hub-kusama-runtime/runtime-benchmarks",
-# 	"asset-hub-polkadot-runtime/runtime-benchmarks",
-# 	"bridge-hub-kusama-runtime/runtime-benchmarks",
-# 	"bridge-hub-polkadot-runtime/runtime-benchmarks",
-# 	"bridge-runtime-common/runtime-benchmarks",
-# 	"collectives-polkadot-runtime/runtime-benchmarks",
-# 	"cumulus-pallet-parachain-system/runtime-benchmarks",
-# 	"cumulus-pallet-xcmp-queue/runtime-benchmarks",
-# 	"frame-support/runtime-benchmarks",
-# 	"kusama-runtime/runtime-benchmarks",
-# 	"pallet-assets/runtime-benchmarks",
-# 	"pallet-bridge-messages/runtime-benchmarks",
-# 	"pallet-im-online/runtime-benchmarks",
-# 	"pallet-message-queue/runtime-benchmarks",
-# 	"pallet-staking/runtime-benchmarks",
-# 	"pallet-xcm/runtime-benchmarks",
-# 	"parachains-common/runtime-benchmarks",
-# 	"penpal-runtime/runtime-benchmarks",
-# 	"polkadot-parachain-primitives/runtime-benchmarks",
-# 	"polkadot-primitives/runtime-benchmarks",
-# 	"polkadot-runtime-parachains/runtime-benchmarks",
-# 	"polkadot-runtime/runtime-benchmarks",
-# 	"polkadot-service/runtime-benchmarks",
-# 	"rococo-runtime/runtime-benchmarks",
-# 	"sp-runtime/runtime-benchmarks",
-# ]
+# Local
+kusama-chain = { path = "../../chains/relays/kusama" }
+asset-hub-kusama-chain = { path = "../../chains/system-parachains/asset-hubs/asset-hub-kusama" }
