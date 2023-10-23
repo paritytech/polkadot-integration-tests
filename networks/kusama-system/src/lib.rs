@@ -14,6 +14,9 @@
 // limitations under the License.
 
 // Local
+pub use kusama_chain;
+pub use asset_hub_kusama_chain;
+
 use kusama_chain::Kusama;
 use asset_hub_kusama_chain::AssetHub;
 
@@ -25,7 +28,6 @@ use integration_tests_common::{
         decl_test_sender_receiver_accounts_parameter_types,
     },
 };
-
 
 decl_test_networks! {
 	pub struct KusamaMockNet {

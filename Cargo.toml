@@ -11,7 +11,7 @@ members = [
     "chains/relays/kusama",
     "chains/system-parachains/asset-hubs/asset-hub-kusama",
     "networks/kusama-system",
-    # "integration-tests/kusama-system/asset-hub",
+    "integration-tests/kusama-system/asset-hub",
 ]
 
 [diener_exclude]

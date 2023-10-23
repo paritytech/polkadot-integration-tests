@@ -20,24 +20,38 @@ pub use frame_support::{
 	sp_runtime::{AccountId32, DispatchError, DispatchResult},
 	traits::fungibles::Inspect,
 };
+
 pub use integration_tests_common::{
 	constants::{
-		asset_hub_kusama::ED as ASSET_HUB_KUSAMA_ED, kusama::ED as KUSAMA_ED, PROOF_SIZE_THRESHOLD,
+		PROOF_SIZE_THRESHOLD,
 		REF_TIME_THRESHOLD, XCM_V3,
 	},
 	xcm_helpers::{xcm_transact_paid_execution, xcm_transact_unpaid_execution},
-	AssetHubKusama, AssetHubKusamaPallet, AssetHubKusamaReceiver, AssetHubKusamaSender, Kusama,
-	KusamaPallet, KusamaReceiver, KusamaSender, PenpalKusamaA, PenpalKusamaAPallet,
-	PenpalKusamaAReceiver, PenpalKusamaASender, PenpalKusamaB, PenpalKusamaBPallet,
+    xcm_emulator::{
+        assert_expected_events, bx, helpers::weight_within_threshold, Chain, Parachain as Para,
+        RelayChain as Relay, Test, TestArgs, TestContext, TestExt,
+    },
 };
+
+pub use kusama_system_network::{
+    kusama_chain::{
+        ED as KUSAMA_ED,
+        KusamaRelayPallet as KusamaPallet,
+    },
+    asset_hub_kusama_chain::{
+        ED as  ASSET_HUB_KUSAMA_ED,
+        AssetHubParaPallet as AssetHubPallet,
+    },
+    KusamaRelay as Kusama,
+    AssetHubPara as AssetHub,
+    KusamaRelayReceiver as KusamaReceiver, KusamaRelaySender as KusamaSender,
+    AssetHubParaReceiver as AssetHubReceiver, AssetHubParaSender as AssetHubSender,
+};
+
 pub use parachains_common::{AccountId, Balance};
 pub use xcm::{
 	prelude::{AccountId32 as AccountId32Junction, *},
 	v3::{Error, NetworkId::Kusama as KusamaId},
-};
-pub use xcm_emulator::{
-	assert_expected_events, bx, helpers::weight_within_threshold, Chain, Parachain as Para,
-	RelayChain as Relay, Test, TestArgs, TestContext, TestExt,
 };
 
 pub const ASSET_ID: u32 = 1;
@@ -45,17 +59,17 @@ pub const ASSET_MIN_BALANCE: u128 = 1000;
 // `Assets` pallet index
 pub const ASSETS_PALLET_ID: u8 = 50;
 
-pub type RelayToSystemParaTest = Test<Kusama, AssetHubKusama>;
-pub type SystemParaToRelayTest = Test<AssetHubKusama, Kusama>;
-pub type SystemParaToParaTest = Test<AssetHubKusama, PenpalKusamaA>;
+pub type RelayToSystemParaTest = Test<Kusama, AssetHub>;
+pub type SystemParaToRelayTest = Test<AssetHub, Kusama>;
+// pub type SystemParaToParaTest = Test<AssetHubKusama, PenpalKusamaA>;
 
 /// Returns a `TestArgs` instance to de used for the Relay Chain accross integraton tests
 pub fn relay_test_args(amount: Balance) -> TestArgs {
 	TestArgs {
-		dest: Kusama::child_location_of(AssetHubKusama::para_id()),
+		dest: Kusama::child_location_of(AssetHub::para_id()),
 		beneficiary: AccountId32Junction {
 			network: None,
-			id: AssetHubKusamaReceiver::get().into(),
+			id: AssetHubReceiver::get().into(),
 		}
 		.into(),
 		amount,
@@ -86,5 +100,4 @@ pub fn system_para_test_args(
 }
 
 #[cfg(test)]
-#[cfg(not(feature = "runtime-benchmarks"))]
 mod tests;

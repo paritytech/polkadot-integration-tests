@@ -403,6 +403,29 @@ dependencies = [
 ]
 
 [[package]]
+name = "asset-hub-kusama-integration-tests"
+version = "1.0.0"
+dependencies = [
+ "assert_matches",
+ "frame-support",
+ "frame-system",
+ "integration-tests-common",
+ "kusama-system-network",
+ "pallet-asset-conversion 5.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "pallet-assets",
+ "pallet-balances",
+ "pallet-xcm",
+ "parachains-common",
+ "parity-scale-codec",
+ "polkadot-core-primitives 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "polkadot-parachain-primitives",
+ "polkadot-runtime-parachains",
+ "sp-runtime",
+ "staging-xcm",
+ "xcm-emulator 0.0.0 (git+https://github.com/paritytech/polkadot-sdk?branch=nacho/xcm-emulator-generic-network-chain)",
+]
+
+[[package]]
 name = "asset-hub-kusama-runtime"
 version = "0.10.0"
 source = "git+https://github.com/paritytech/polkadot-sdk?rev=aa54bb11e732e5db6c1e69bd244147649ebd6824#aa54bb11e732e5db6c1e69bd244147649ebd6824"
@@ -426,7 +449,7 @@ dependencies = [
  "hex-literal",
  "kusama-runtime-constants 2.0.0 (git+https://github.com/paritytech/polkadot-sdk?rev=aa54bb11e732e5db6c1e69bd244147649ebd6824)",
  "log",
- "pallet-asset-conversion",
+ "pallet-asset-conversion 5.0.0 (git+https://github.com/paritytech/polkadot-sdk?rev=aa54bb11e732e5db6c1e69bd244147649ebd6824)",
  "pallet-asset-conversion-tx-payment",
  "pallet-assets",
  "pallet-aura",
@@ -565,7 +588,7 @@ dependencies = [
  "frame-system-rpc-runtime-api",
  "frame-try-runtime",
  "log",
- "pallet-asset-conversion",
+ "pallet-asset-conversion 5.0.0 (git+https://github.com/paritytech/polkadot-sdk?rev=aa54bb11e732e5db6c1e69bd244147649ebd6824)",
  "pallet-asset-conversion-tx-payment",
  "pallet-assets",
  "pallet-aura",
@@ -622,7 +645,7 @@ dependencies = [
  "frame-support",
  "impl-trait-for-tuples",
  "log",
- "pallet-asset-conversion",
+ "pallet-asset-conversion 5.0.0 (git+https://github.com/paritytech/polkadot-sdk?rev=aa54bb11e732e5db6c1e69bd244147649ebd6824)",
  "pallet-asset-tx-payment",
  "pallet-xcm",
  "parachains-common",
@@ -6091,6 +6114,25 @@ dependencies = [
 [[package]]
 name = "pallet-asset-conversion"
 version = "5.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1661ad646244fd155fae26799b9f12246aac8a18ed785550ceea6e4ac25cfbdc"
+dependencies = [
+ "frame-benchmarking",
+ "frame-support",
+ "frame-system",
+ "parity-scale-codec",
+ "scale-info",
+ "sp-api",
+ "sp-arithmetic",
+ "sp-core",
+ "sp-io",
+ "sp-runtime",
+ "sp-std",
+]
+
+[[package]]
+name = "pallet-asset-conversion"
+version = "5.0.0"
 source = "git+https://github.com/paritytech/polkadot-sdk?rev=aa54bb11e732e5db6c1e69bd244147649ebd6824#aa54bb11e732e5db6c1e69bd244147649ebd6824"
 dependencies = [
  "frame-benchmarking",
@@ -6113,7 +6155,7 @@ source = "git+https://github.com/paritytech/polkadot-sdk?rev=aa54bb11e732e5db6c1
 dependencies = [
  "frame-support",
  "frame-system",
- "pallet-asset-conversion",
+ "pallet-asset-conversion 5.0.0 (git+https://github.com/paritytech/polkadot-sdk?rev=aa54bb11e732e5db6c1e69bd244147649ebd6824)",
  "pallet-transaction-payment",
  "parity-scale-codec",
  "scale-info",

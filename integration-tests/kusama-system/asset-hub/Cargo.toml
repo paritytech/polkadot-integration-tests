@@ -17,7 +17,7 @@ frame-support = { default-features = false, version = "23.0.0" }
 frame-system = { default-features = false, version = "23.0.0" }
 pallet-balances = { default-features = false, version = "23.0.0" }
 pallet-assets = { default-features = false, version = "24.0.0" }
-pallet-asset-conversion = { default-features = false, version = "5.0.0" }
+pallet-asset-conversion = { version = "5.0.0" }
 
 # Polkadot
 polkadot-core-primitives = { default-features = false, version = "2.0.0" }
@@ -28,26 +28,9 @@ pallet-xcm = { default-features = false, version = "2.0.0" }
 
 # Cumulus
 parachains-common = { version = "2.0.0" }
-asset-hub-kusama-runtime = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
 # xcm-emulator = { default-features = false,  version = "0.0.1" }
 xcm-emulator = { default-features = false, git = "https://github.com/paritytech/polkadot-sdk", branch = "nacho/xcm-emulator-generic-network-chain" }
+integration-tests-common = { git = "https://github.com/paritytech/polkadot-sdk", rev = "aa54bb11e732e5db6c1e69bd244147649ebd6824" }
 
 # Local
-integration-tests-common = { path = "../../common", default-features = false }
-
-# [features]
-# runtime-benchmarks = [
-# 	"asset-hub-kusama-runtime/runtime-benchmarks",
-# 	"frame-support/runtime-benchmarks",
-# 	"frame-system/runtime-benchmarks",
-# 	"integration-tests-common/runtime-benchmarks",
-# 	"pallet-asset-conversion/runtime-benchmarks",
-# 	"pallet-assets/runtime-benchmarks",
-# 	"pallet-balances/runtime-benchmarks",
-# 	"pallet-xcm/runtime-benchmarks",
-# 	"parachains-common/runtime-benchmarks",
-# 	"polkadot-parachain-primitives/runtime-benchmarks",
-# 	"polkadot-runtime-parachains/runtime-benchmarks",
-# 	"polkadot-runtime/runtime-benchmarks",
-# 	"sp-runtime/runtime-benchmarks",
-# ]
+kusama-system-network = { path = "../../../networks/kusama-system" }

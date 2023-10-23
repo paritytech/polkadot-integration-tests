@@ -1,0 +1,25 @@
+[package]
+name = "asset-hub-kusama-chain"
+version = "0.0.0"
+authors.workspace = true
+edition.workspace = true
+license = "Apache-2.0"
+description = "Asset Hub Kusama emulated chain"
+publish = false
+
+[dependencies]
+# Substrate
+sp-core = { default-features = false, version = "23.0.0" }
+sp-runtime = { version = "26.0.0" }
+frame-support = { version = "23.0.0" }
+
+# Polakadot
+parachains-common = { version = "2.0.0" }
+
+# Cumulus
+xcm-emulator = { default-features = false, git = "https://github.com/paritytech/polkadot-sdk", branch = "nacho/xcm-emulator-generic-network-chain" }
+integration-tests-common = { git = "https://github.com/paritytech/polkadot-sdk", rev = "aa54bb11e732e5db6c1e69bd244147649ebd6824" }
+
+# Fellows Runtime
+# asset-hub-kusama-runtime = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
+asset-hub-kusama-runtime = { git = "https://github.com/paritytech/polkadot-sdk", rev = "aa54bb11e732e5db6c1e69bd244147649ebd6824" }
