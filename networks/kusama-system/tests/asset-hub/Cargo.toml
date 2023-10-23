@@ -1,14 +1,15 @@
 [package]
-name = "asset-hub-polkadot-integration-tests"
+name = "asset-hub-kusama-integration-tests"
 version = "1.0.0"
 authors.workspace = true
 edition.workspace = true
 license = "Apache-2.0"
-description = "Asset Hub Polkadot runtime integration tests with xcm-emulator"
+description = "Asset Hub Kusama runtime integration tests with xcm-emulator"
 publish = false
 
 [dependencies]
 codec = { package = "parity-scale-codec", version = "3.4.0", default-features = false }
+assert_matches = "1.5.0"
 
 # Substrate
 sp-runtime = { default-features = false, version = "26.0.0" }
@@ -27,15 +28,16 @@ pallet-xcm = { default-features = false, version = "2.0.0" }
 
 # Cumulus
 parachains-common = { version = "2.0.0" }
-asset-hub-polkadot-runtime = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
-xcm-emulator = { default-features = false, version = "0.0.1" }
+asset-hub-kusama-runtime = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
+# xcm-emulator = { default-features = false,  version = "0.0.1" }
+xcm-emulator = { default-features = false, git = "https://github.com/paritytech/polkadot-sdk", branch = "nacho/xcm-emulator-generic-network-chain" }
 
 # Local
 integration-tests-common = { path = "../../common", default-features = false }
 
 # [features]
 # runtime-benchmarks = [
-# 	"asset-hub-polkadot-runtime/runtime-benchmarks",
+# 	"asset-hub-kusama-runtime/runtime-benchmarks",
 # 	"frame-support/runtime-benchmarks",
 # 	"frame-system/runtime-benchmarks",
 # 	"integration-tests-common/runtime-benchmarks",

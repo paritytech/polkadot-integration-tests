@@ -32,7 +32,8 @@ polkadot-primitives = { default-features = false, version = "2.0.0" }
 polkadot-runtime-parachains = { version = "2.0.0" }
 polkadot-runtime = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
 polkadot-runtime-constants = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
-kusama-runtime = { package = "staging-kusama-runtime", git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
+# kusama-runtime = { package = "staging-kusama-runtime", git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
+kusama-runtime = { package = "staging-kusama-runtime", git = "https://github.com/paritytech/polkadot-sdk", branch = "nacho/xcm-emulator-generic-network-chain" }
 kusama-runtime-constants = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
 xcm = { package = "staging-xcm", default-features = false, version = "2.0.0" }
 pallet-xcm = { default-features = false, version = "2.0.0" }
@@ -46,7 +47,8 @@ asset-hub-kusama-runtime = { git = "https://github.com/polkadot-fellows/runtimes
 collectives-polkadot-runtime = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
 bridge-hub-kusama-runtime = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
 bridge-hub-polkadot-runtime = { git = "https://github.com/polkadot-fellows/runtimes", branch = "main" }
-xcm-emulator = { default-features = false, version = "0.0.1" }
+# xcm-emulator = { default-features = false, version = "0.0.1" }
+xcm-emulator = { default-features = false, git = "https://github.com/paritytech/polkadot-sdk", branch = "nacho/xcm-emulator-generic-network-chain" }
 cumulus-pallet-dmp-queue = { version = "0.2.0" }
 cumulus-pallet-xcmp-queue = { default-features = false, version = "0.2.0" }
 cumulus-pallet-parachain-system = { version = "0.2.0" }
