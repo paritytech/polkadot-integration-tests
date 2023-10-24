@@ -8,9 +8,7 @@ license = "Apache-2.0"
 resolver = "2"
 
 members = [
-    "chains/relays/kusama",
-    "chains/system-parachains/asset-hubs/asset-hub-kusama",
-    "networks/kusama-system",
+    "asset-hub",
 ]
 
 [diener_exclude]
